@@ -1,0 +1,6 @@
+mkdir ssl
+cd ssl
+openssl genrsa -out ssl.key 2048
+openssl req -new -key ssl.key -out ssl.scr
+openssl x509 -req -in ssl.scr -signkey ssl.key -out ssl.crt -days 3650
+cd ..
